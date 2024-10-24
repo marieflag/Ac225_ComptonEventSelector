@@ -112,8 +112,7 @@ vector<RowData> readFile(const string& filename, int startRow) {
 int main() {
    
    // string filename = "dump_2.txt";
-int iii = 1*10-9;
-for (int ii =iii; ii <=iii+9; ++ii) {
+int ii = 1;
    std::string filename = "dump_CC_" + std::to_string(ii) + ".txt";
     int startRow = 5;
 
@@ -197,8 +196,8 @@ for (int ii =iii; ii <=iii+9; ++ii) {
 
 
 
- //   std::string filename1 = "CC_coincidence_water1_1.txt";
-    std::string filename1 = "CC_coincidence_NEMA_Z10_ratio30_" + std::to_string(ii) + ".txt";
+    std::string filename1 = "CC_coincidence_NEMA_water_ratio30_1.txt";
+    
     std::ofstream file;
     file.open(filename1);
 
@@ -209,7 +208,7 @@ for (int ii =iii; ii <=iii+9; ++ii) {
         file << "SE\n";
         file << "ET CO\n";
         file << "ID " << j + 1 << "\n";
-        file << "TI 0.000859089\n";
+        file << "TI 0.0\n";
         file << "SQ " << sq[j] + 1 << "\n";
         file << "CT 0 0\n";
         file << "TL 1\n";
@@ -217,12 +216,12 @@ for (int ii =iii; ii <=iii+9; ++ii) {
        // file << "CE " << (Energy_V1[j][1] - Energy_V1[j][0]) * 1000 << " 0   " << (Energy_V1[j][0] - Energy_V2[j][0]) * 1000 << " 0\n"; // unit keV
          file << "CE " << (Energy_V1[j][0]) * 1000 << " 0   " << (Energy_V1[j][1] - Energy_V1[j][0]) * 1000 << " 0\n";
         file << "CD " << V1[j][0] / 10 << " " << V1[j][1] / 10 << " " << V1[j][2] / 10 << "   0 0 0   " << V2[j][0] / 10 << " " << V2[j][1] / 10 << " " << V2[j][2] / 10 << "   0 0 0   0 0 0   0 0 0\n"; // unit cm
-        file << "LA 8.67643\n";
+        file << "LA 0.0\n";
     }
 
     file.close();
 
-}
+
 
     return 0;
 }
